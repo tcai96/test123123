@@ -1,0 +1,36 @@
+\def\rddots#1{\cdot^{\cdot^{\cdot^{#1}}}}
+\def\rddotse{\cdot^{\cdot^{\cdot}}}
+
+\problemname{Tetration}
+
+Anthony is just now learning basic math, how exciting! He first learns about addition
+\[
+a+n=a+\underbrace{1+1+\cdots+1}_n,
+\]
+then multiplication
+\[
+a\times n=\underbrace{a+a+\cdots+a}_n,
+\]
+exponentiation
+\[
+a^n=\underbrace{a\times a\times\cdots\times a}_n.
+\]
+and finally, \emph{tetration}
+\[
+^na=\underbrace{a^{a^{\rddots a}}}_n.
+\]
+
+Very quickly, Anthony becomes interested in infinite tetrations, namely
+\[
+^\infty a={a^{a^{\rddotse}}}.
+\]
+Anthony wonders, given an arbitrary real number $N$, what is the solution to $^\infty a=N$? Unable to figure it out, Anthony has asked you to write a program to help him!
+
+Here's a fun fact: A solution only exists for $\frac{1}{e}\leq N\leq e$.
+
+\section*{Input}
+The first line of input contains one real number $N$, $0.36788\leq N\leq2.718281$.
+
+\section*{Output}
+Output a single line containing a real number $a$, such that $^\infty a=N$. 
+Your answer will be considered correct if its absolute or relative error doesn't exceed $10^{-5}$.

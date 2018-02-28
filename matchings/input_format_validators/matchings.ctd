@@ -1,0 +1,13 @@
+REP(2)
+    INT(1,1000,w) SPACE INT(1,1000,h) NEWLINE
+	REPI(i,h)
+        INT(0,1)
+        REPI(j, w-1)
+            SPACE INT(0,1)
+        END
+        NEWLINE
+	END
+    UNSET(n)
+    UNSET(m)
+END
+EOF

@@ -1,0 +1,19 @@
+INT(1,1000,n[0]) SPACE
+INT(1,1000,n[1]) SPACE
+INT(0,2000,m[0]) SPACE
+INT(0,2000,m[1]) NEWLINE
+REPI(u, 2)
+	SET(a = 0)
+	SET(b = 0)
+	REPI(i, m[u])
+		INT(1,n[u],a[i]) SPACE INT(1,n[u],b[i]) NEWLINE
+		ASSERT(a[i] != b[i])
+	END
+	ASSERT(UNIQUE(a, b))
+	UNSET(a)
+	UNSET(b)
+END
+INT(1,2000,q) NEWLINE
+REP(q)
+	INT(0,2000) NEWLINE
+END

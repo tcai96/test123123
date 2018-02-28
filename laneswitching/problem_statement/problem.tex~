@@ -1,0 +1,60 @@
+\problemname{Lane Switching}
+
+The Autonomous Car Manufacturer (ACM) needs to design algorithms to
+control their cars autonomously.  One particular problem is
+lane switching---if the car needs to switch lanes, it wants to
+do so in the safest manner.
+
+Initially the car is in the leftmost lane, and the car needs to switch
+to the rightmost lane.  Fortunately, the car has a variety of sensors
+and can obtain the locations of all cars in a section of the highway.
+Each car has a length, and its location is given by the lane number
+(starting at 0 from the leftmost lane) and the distance of the car
+from the beginning of the lane.  This is illustrated below.
+
+Since all other cars are also autonomous, you may assume that all cars
+are travelling at exactly the speed limit.  However, the ACM would
+like to set itself apart by producing cars that may drive at any speed
+regardless of the speed limit, as long as it does not hit any other
+car.  For simplicity, you may assume that a lane switch can be done by
+moving the car perpendicular to the travel direction of the lane.
+This can be done by driving at the speed limit.
+
+When a lane switch occurs, the destination must have unoccupied space
+for the car to move into (a perfect fit is allowed).  The switch is
+considered safer the more space there is for the car to move through.
+We define the safety factor of a lane switch as the closest distance
+to any car during the lane switch.  We are only concerned about
+cars in the same lane, and will ignore distances between cars in the
+different lanes.  The safety factor of a sequence of lane switches is
+the minimum of the safety factors of the individual switches.
+Obviously, the ACM wants its cars to choose a sequence of lane
+switches that has the highest safety factor.  
+
+Since the sensors have limited range, the autonomous cars are not
+allowed to drive too far in front or behind the range.  All sensor
+readings will be distances from the start of the sensor range.  If the
+sensor range is $R$, no part of the ACM car can go before the range or
+beyond a distance of $R$ from the start of the range.
+
+Write a program that will determine the highest safety factor
+achievable to switch from the leftmost lane to the rightmost lane.
+
+\section*{Input}
+
+The first line of input contains three integers $N$
+($2 \leq N \leq 100$), $M$ ($M \geq 1$), $R$
+($1 \leq R \leq 1\,000\,000$) indicating the number of lanes, the
+number of cars on the road, and the sensor range.  The next $M$ lines
+describe each car with three integers: the lane number (between 0 and
+$N-1$, inclusive), the length of the car, and the distance from the
+start of the sensor range to the back of the car.  The distance will
+be at most $R$.  The first car given is the ACM car.
+
+There are at most 100 cars in each lane.
+
+
+\section*{Output}
+
+Print a single number indicating the maximum achievable safety factor
+to switch from lane 0 to lane $N-1$.  Your answer will be considered correct if its absolute or relative error does not exceed $10^{-5}$.
